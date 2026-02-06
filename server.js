@@ -14,9 +14,9 @@ app.post('/webhook/saweria', (req, res) => {
     
     latestDonation = {
         newDonation: true,
-        donorName: req.body.donor_name || req.body.name || 'Anonymous',
+        donorName: req.body.donator || req.body.donor_name || req.body.name || 'Tidak Di Ketahui',
         amount: req.body.amount || req.body.total || 0,
-        message: req.body.message || '',
+        message: req.body.message || req.body.note || '',
         timestamp: Date.now()
     };
     
